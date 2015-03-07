@@ -139,5 +139,14 @@ public class WebLoginTest extends Function {
     public void loginWithWrongFormatId(){
     //...
     }
-
 ```
+
+### Prefered selector order
+
+Preferred selector order : id > name >links text> css > xpath
+
+Css and Xpath are located based selector, and they are slower than other selectors.
+
+* Id and name are often the easiest and sure way.
+* Css = Id + name.
+* Last solution should be xpath.
