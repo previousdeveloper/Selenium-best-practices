@@ -4,7 +4,7 @@ Selenium is a portable software testing framework for web applications.It also p
 * [General](#general)
   * [Use PageObjects pattern](#use-pageobjects-pattern)
   * [Prefered selector order](#prefered-selector-order)
-  * [Don't use Magic String](#do-not-use-magic-string)
+  * [Do not use Magic String](#do-not-use-magic-string)
   * [Behavior Driven Design](#behaviour-driven-design)
   * [Use build automation system](#use-build-automation-system)
 
@@ -150,3 +150,20 @@ Css and Xpath are located based selector, and they are slower than other selecto
 * Id and name are often the easiest and sure way.
 * Css = Id + name.
 * Last solution should be xpath.
+
+
+
+### Do not use Magic String
+
+It improves readability of the code and it's easier to maintain.
+
+```java
+
+
+WebDriver driver = new HtmlUnitDriver();
+// Don't use, create Constants each element name
+WebElement element = driver.findElement(By.name("sample"));
+driver.quit();
+
+
+```
