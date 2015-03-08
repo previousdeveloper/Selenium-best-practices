@@ -5,7 +5,7 @@ Selenium is a portable software testing framework for web applications.It also p
   * [Use PageObjects pattern](#use-pageobjects-pattern)
   * [Prefered selector order](#prefered-selector-order)
   * [Do not use Magic String](#do-not-use-magic-string)
-  * [Behavior Driven Design](#behaviour-driven-design)
+  * [Behavior Driven Design](#behavior-driven-design)
   * [Use build automation system](#use-build-automation-system)
 
 
@@ -158,12 +158,48 @@ Css and Xpath are located based selector, and they are slower than other selecto
 It improves readability of the code and it's easier to maintain.
 
 ```java
-
-
 WebDriver driver = new HtmlUnitDriver();
 // Don't use, create Constants each element name
 WebElement element = driver.findElement(By.name("sample"));
 driver.quit();
+```
 
+### Behavior Driven Design
+
+BDD is principally an idea about how software development should be managed by both business interests and technical insight, the practice of BDD does assume the use of specialized software tools to support the development process.
+Think all test scenarios.
+
+Example BDD 
 
 ```
+Feature: Sign up
+
+Sign up should be quick.
+Write all steps.
+1- Open Browser
+2-Navigate to Url
+3-Click Sign Up Button
+4-Write Valid Username and Password
+5-Click Register.
+
+Scenario: Successful sign up
+New users should get a confirmation email and be greeted
+personally by the site once signed in.
+
+Given I have chosen to sign up
+When I sign up with valid details
+Then I should receive a confirmation email
+And I should see a personalized greeting message
+
+Scenario: Duplicate email
+
+Where someone tries to create an account for an email address
+that already exists.
+
+Given I have chosen to sign up
+But I enter an email address that has already registered
+Then I should be told that the email is already registered
+And I should be offered the option to recover my password
+
+```
+
