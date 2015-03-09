@@ -7,6 +7,7 @@ Selenium is a portable software testing framework for web applications.It also p
   * [Do not use Magic String](#do-not-use-magic-string)
   * [Behavior Driven Design](#behavior-driven-design)
   * [Use build automation system](#use-build-automation-system)
+  * [Learn Continuous Integration Tools](#learn-continuous-integration-tools)
 
 
 
