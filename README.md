@@ -1,17 +1,23 @@
+#Goal
+Our goal is to get together Selenium best practices. Feedbacks are welcome. If you see anything wrong open an issue or know better way create PR, just fork it and change it. We are open to learn and hear new ideas. 
+
 # Selenium-best-practices
 Selenium is a portable software testing framework for web applications.It also provides a test domain-specific language to write tests in a number of popular programming languages, including Java, C#, Groovy, Perl, PHP, Python and Ruby.
 
 * [General](#general)
-  * [Use PageObjects pattern](#use-pageobjects-pattern)
-  * [Prefered selector order](#prefered-selector-order)
-  * [Do not use Magic String](#do-not-use-magic-string)
+  * [Use PageObjects Pattern](#use-pageobjects-pattern)
+  * [Prefered Selector Order](#prefered-selector-order)
+  * [Create Ordered Tests](#create-ordered-tests)
+  * [Get Name of the Running Test](#get-name-of-the-running-test)
+  * [Do not Use Magic String](#do-not-use-magic-string)
   * [Behavior Driven Design](#behavior-driven-design)
-  * [Use build automation system](#use-build-automation-system)
+  * [Use Build Automation System](#use-build-automation-system)
   * [Learn Continuous Integration Tools](#learn-continuous-integration-tools)
 
 
 
-### Use PageObjects pattern
+
+## Use PageObjects Pattern
 
 Page Object is a Design Pattern which has become popular in test automation for enhancing test maintenance and reducing code duplication.An implementation of the page object model can be achieved by separating the abstraction of the test object and the test scripts.
 
@@ -40,10 +46,104 @@ Use multi config for each environment. Make it changeable.Read your test case va
 * Separate to WebPageElement, WebPageObject,WebTest.
 
 
-##Simple  example
 
 
-###PAGE ELEMENT CLASS###
+## Prefered Selector Order
+
+Preferred selector order : id > name >links text> css > xpath
+
+Css and Xpath are located based selector, and they are slower than other selectors.
+
+* Id and name are often the easiest and sure way.
+* Css = Id + name.
+* Last solution should be xpath.
+
+
+## Create Ordered Tests
+
+```java
+import org.junit.runners.MethodSorters;
+
+//Running tests in order of method names in ascending order
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//Running tests in order of method names in ascending order
+@FixMethodOrder(MethodSorters.JVM)
+```
+
+
+## Get Name of the Running Test
+
+```java
+import org.junit.rules.TestName;
+
+@Rule
+public TestName name = new TestName();
+
+//example usage; writes every test name before it runs.
+@Before
+    public void logBeforeTestsStart() {
+        log.info(name.getMethodName());
+    }
+
+```
+
+
+## Do not use Magic String
+
+It improves readability of the code and it's easier to maintain.
+
+```java
+WebDriver driver = new HtmlUnitDriver();
+// Don't use, create Constants each element name
+WebElement element = driver.findElement(By.name("sample"));
+driver.quit();
+```
+
+
+## Behavior Driven Design
+
+BDD is principally an idea about how software development should be managed by both business interests and technical insight, the practice of BDD does assume the use of specialized software tools to support the development process.
+Think all test scenarios.
+
+Example BDD 
+
+```
+Feature: Sign up
+
+Sign up should be quick.
+Write all steps.
+1- Open Browser
+2-Navigate to Url
+3-Click Sign Up Button
+4-Write Valid Username and Password
+5-Click Register.
+
+Scenario: Successful sign up
+New users should get a confirmation email and be greeted
+personally by the site once signed in.
+
+Given I have chosen to sign up
+When I sign up with valid details
+Then I should receive a confirmation email
+And I should see a personalized greeting message
+
+Scenario: Duplicate email
+
+Where someone tries to create an account for an email address
+that already exists.
+
+Given I have chosen to sign up
+But I enter an email address that has already registered
+Then I should be told that the email is already registered
+And I should be offered the option to recover my password
+
+```
+
+
+###Simple Example
+
+
+##Page Element Class
 ```java 
 //Write clear class  name.
 public class WebLoginPageElement {
@@ -63,7 +163,8 @@ public class WebLoginPageElement {
         
 ```
 
-###PAGE OBJECT CLASS###
+##Page Object Class
+
 ```java
 public class WebLoginPage extends Function {
 
@@ -97,7 +198,9 @@ public class WebLoginPage extends Function {
         return this;}
 ```
 
-###TEST CLASS###
+
+##Test Class
+
 ```java
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
@@ -140,67 +243,5 @@ public class WebLoginTest extends Function {
     public void loginWithWrongFormatId(){
     //...
     }
-```
-
-### Prefered selector order
-
-Preferred selector order : id > name >links text> css > xpath
-
-Css and Xpath are located based selector, and they are slower than other selectors.
-
-* Id and name are often the easiest and sure way.
-* Css = Id + name.
-* Last solution should be xpath.
-
-
-
-### Do not use Magic String
-
-It improves readability of the code and it's easier to maintain.
-
-```java
-WebDriver driver = new HtmlUnitDriver();
-// Don't use, create Constants each element name
-WebElement element = driver.findElement(By.name("sample"));
-driver.quit();
-```
-
-### Behavior Driven Design
-
-BDD is principally an idea about how software development should be managed by both business interests and technical insight, the practice of BDD does assume the use of specialized software tools to support the development process.
-Think all test scenarios.
-
-Example BDD 
-
-```
-Feature: Sign up
-
-Sign up should be quick.
-Write all steps.
-1- Open Browser
-2-Navigate to Url
-3-Click Sign Up Button
-4-Write Valid Username and Password
-5-Click Register.
-
-Scenario: Successful sign up
-New users should get a confirmation email and be greeted
-personally by the site once signed in.
-
-Given I have chosen to sign up
-When I sign up with valid details
-Then I should receive a confirmation email
-And I should see a personalized greeting message
-
-Scenario: Duplicate email
-
-Where someone tries to create an account for an email address
-that already exists.
-
-Given I have chosen to sign up
-But I enter an email address that has already registered
-Then I should be told that the email is already registered
-And I should be offered the option to recover my password
-
 ```
 
