@@ -52,10 +52,10 @@ Use multi config for each environment. Make it changeable. Read your test case v
 
 Preferred selector order : id > name >links text> css > xpath
 
-Css and Xpath are location based selectors, and they are slower than other selectors.
+CSS and XPath are location based selectors, they are slower than other selectors.
 
 * Id and name are often the easiest and sure way.
-* Css = Id + name.
+* CSS = Id + name.
 * Last solution should be xpath.
 
 
