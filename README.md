@@ -88,7 +88,7 @@ public TestName name = new TestName();
 ```
 
 
-## Do not use Magic String
+## Do not use Magic Strings
 
 It improves readability of the code and it's easier to maintain.
 
@@ -102,7 +102,7 @@ driver.quit();
 
 ## Behavior Driven Design
 
-BDD is principally an idea about how software development should be managed by both business interests and technical insight, the practice of BDD does assume the use of specialized software tools to support the development process.
+BDD is principally an idea about how software development should be managed by both business interests and technical insight, the practice of BDD assumes the use of specialized software tools to support the development process.
 Think all test scenarios.
 
 Example BDD 
