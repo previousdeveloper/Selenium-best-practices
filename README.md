@@ -1,8 +1,8 @@
 #Goal
-Our goal is to get together Selenium best practices. Feedbacks are welcome. If you see anything wrong open an issue or know better way create PR, just fork it and change it. We are open to learn and hear new ideas. 
+Our goal is to get together Selenium best practices. Feedback is welcome. If you see anything wrong or know better way open an issue or create a pull request, just fork it and change it. We are open to learn and hear new ideas. 
 
 # Selenium-best-practices
-Selenium is a portable software testing framework for web applications.It also provides a test domain-specific language to write tests in a number of popular programming languages, including Java, C#, Groovy, Perl, PHP, Python and Ruby.
+Selenium is a portable software testing framework for web applications. It also provides a test domain-specific language to write tests in a number of popular programming languages, including Java, C#, Groovy, Perl, PHP, Python and Ruby.
 
 * [General](#general)
   * [Use PageObjects Pattern](#use-pageobjects-pattern)
