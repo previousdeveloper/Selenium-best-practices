@@ -19,7 +19,7 @@ Selenium is a portable software testing framework for web applications. It also 
 
 ## Use PageObjects Pattern
 
-Page Object is a Design Pattern which has become popular in test automation for enhancing test maintenance and reducing code duplication.An implementation of the page object model can be achieved by separating the abstraction of the test object and the test scripts.
+Page Object is a Design Pattern which has become popular in test automation for enhancing test maintenance and reducing code duplication. An implementation of the page object model can be achieved by separating the abstraction of the test object and the test scripts.
 
 **Advantages of using Page Object Pattern:**
 * Easy to Maintain
@@ -29,7 +29,7 @@ Page Object is a Design Pattern which has become popular in test automation for 
 * Reliability
 * There is a clean separation between test code and page specific code such as locators  and layout.
 
-Use multi config for each environment. Make it changeable.Read your test case value from config. Don't use a static.
+Use multi config for each environment. Make it changeable. Read your test case value from config. Don't use a static.
 
 * StageConfig
  * loginUrl=http://stage.com
@@ -42,8 +42,8 @@ Use multi config for each environment. Make it changeable.Read your test case va
  * validPassword=123456
 
 **Shortcut**
-* Don't use magic string.
-* Separate to WebPageElement, WebPageObject,WebTest.
+* Don't use magic strings.
+* Separate to WebPageElement, WebPageObject, WebTest.
 
 
 
@@ -52,7 +52,7 @@ Use multi config for each environment. Make it changeable.Read your test case va
 
 Preferred selector order : id > name >links text> css > xpath
 
-Css and Xpath are located based selector, and they are slower than other selectors.
+Css and Xpath are location based selectors, and they are slower than other selectors.
 
 * Id and name are often the easiest and sure way.
 * Css = Id + name.
