@@ -1,8 +1,8 @@
 #Goal
-Our goal is to get together Selenium best practices. Feedbacks are welcome. If you see anything wrong open an issue or know better way create PR, just fork it and change it. We are open to learn and hear new ideas. 
+Our goal is to get together Selenium best practices. Feedback is welcome. If you see anything wrong or know better way open an issue or create a pull request, just fork it and change it. We are open to learn and hear new ideas. 
 
 # Selenium-best-practices
-Selenium is a portable software testing framework for web applications.It also provides a test domain-specific language to write tests in a number of popular programming languages, including Java, C#, Groovy, Perl, PHP, Python and Ruby.
+Selenium is a portable software testing framework for web applications. It also provides a test domain-specific language to write tests in a number of popular programming languages, including Java, C#, Groovy, Perl, PHP, Python and Ruby.
 
 * [General](#general)
   * [Use PageObjects Pattern](#use-pageobjects-pattern)
@@ -19,7 +19,7 @@ Selenium is a portable software testing framework for web applications.It also p
 
 ## Use PageObjects Pattern
 
-Page Object is a Design Pattern which has become popular in test automation for enhancing test maintenance and reducing code duplication.An implementation of the page object model can be achieved by separating the abstraction of the test object and the test scripts.
+Page Object is a Design Pattern which has become popular in test automation for enhancing test maintenance and reducing code duplication. An implementation of the page object model can be achieved by separating the abstraction of the test object and the test scripts.
 
 **Advantages of using Page Object Pattern:**
 * Easy to Maintain
@@ -29,7 +29,7 @@ Page Object is a Design Pattern which has become popular in test automation for 
 * Reliability
 * There is a clean separation between test code and page specific code such as locators  and layout.
 
-Use multi config for each environment. Make it changeable.Read your test case value from config. Don't use a static.
+Use multi config for each environment. Make it changeable. Read your test case value from config. Don't use a static.
 
 * StageConfig
  * loginUrl=http://stage.com
@@ -42,8 +42,8 @@ Use multi config for each environment. Make it changeable.Read your test case va
  * validPassword=123456
 
 **Shortcut**
-* Don't use magic string.
-* Separate to WebPageElement, WebPageObject,WebTest.
+* Don't use magic strings.
+* Separate to WebPageElement, WebPageObject, WebTest.
 
 
 
@@ -52,10 +52,10 @@ Use multi config for each environment. Make it changeable.Read your test case va
 
 Preferred selector order : id > name >links text> css > xpath
 
-Css and Xpath are located based selector, and they are slower than other selectors.
+CSS and XPath are location based selectors, they are slower than other selectors.
 
 * Id and name are often the easiest and sure way.
-* Css = Id + name.
+* CSS = Id + name.
 * Last solution should be xpath.
 
 
@@ -88,7 +88,7 @@ public TestName name = new TestName();
 ```
 
 
-## Do not use Magic String
+## Do not use Magic Strings
 
 It improves readability of the code and it's easier to maintain.
 
@@ -102,7 +102,7 @@ driver.quit();
 
 ## Behavior Driven Design
 
-BDD is principally an idea about how software development should be managed by both business interests and technical insight, the practice of BDD does assume the use of specialized software tools to support the development process.
+BDD is principally an idea about how software development should be managed by both business interests and technical insight, the practice of BDD assumes the use of specialized software tools to support the development process.
 Think all test scenarios.
 
 Example BDD 
