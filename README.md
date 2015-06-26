@@ -9,7 +9,7 @@ Selenium is a portable software testing framework for web applications. It also 
   * [Prefered Selector Order](#prefered-selector-order)
   * [Create Ordered Tests](#create-ordered-tests)
   * [Get Name of the Running Test](#get-name-of-the-running-test)
-  * [Do not Use Magic String](#do-not-use-magic-string)
+  * [Do not Use Magic String](#do-not-use-magic-strings)
   * [Behavior Driven Design](#behavior-driven-design)
   * [Use Build Automation System](#use-build-automation-system)
   * [Learn Continuous Integration Tools](#learn-continuous-integration-tools)
