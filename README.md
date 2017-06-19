@@ -1,4 +1,4 @@
-#Goal
+# Goal
 Our goal is to get together Selenium best practices. Feedback is welcome. If you see anything wrong or know better way open an issue or create a pull request, just fork it and change it. We are open to learn and hear new ideas. 
 
 # Selenium-best-practices
